@@ -1,6 +1,8 @@
-for(i in (1:13)){
-    lapply(all_LIVLEE,get_a_market_temp)
-    lapply(all_PL,get_a_market_temp)
+for(i in (1:25)){
+    lapply(BRICHE,get_and_save_a_market, "data/")
+    lapply(PL,get_and_save_a_market, "data/")
     print(Sys.time())
-    Sys.sleep(time = 600)
+    Sys.sleep(time = 180)
+    print(i)
 }
+

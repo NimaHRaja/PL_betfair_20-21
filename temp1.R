@@ -1,29 +1,5 @@
 
-# devtools::install_github("durtal/betfaiR", force = TRUE)
-library(betfaiR)
-library(dplyr)
-nima <- read.csv("../../../__Archive2018/Projects/WorldCup2018/betfair/my_login_data.csv")
-
-bf <- betfair(usr = nima$username, 
-              pwd = nima$password, 
-              key = as.character(nima$applicationKey))
-
-bf$competitions() %>% View() # 10932509
-bf$marketTypes() %>% View()
-bf$events(filter = marketFilter(competitionIds = 10932509)) %>% View() # 2022802
-bf$marketCatalogue(filter = marketFilter(eventIds = 2022802#,
-                                         # from = "2020-05-30T12:00:00Z",
-                                         # to = "2022-05-30T12:00:00Z"
-                                         #competitionIds = 10932509
-)) %>% View()
-
-
-
-bf$marketBook(marketIds = "1.171857635") %>% View()
-
-
-
-
+my_bf$marketBook(marketIds = "1.171857635") %>% View()
 
 
 
