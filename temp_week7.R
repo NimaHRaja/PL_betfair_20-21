@@ -187,4 +187,46 @@ while (Sys.time() < "2020-11-01 21:10:00 BST"){
 
 ###############################
 
+# my_bf$events(filter = marketFilter(competitionIds = 10932509)) %>% View() # 30072808	
+
+
+while (Sys.time() < "2020-11-02 19:50:00 BST"){
+    
+    FULWBA <- 
+        my_bf$marketCatalogue(maxResults = 100, filter = marketFilter(eventIds = 30072808))
+    
+    PL <- 
+        my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = 2022802))
+    
+    
+    lapply(FULWBA,get_and_save_a_market, data_folder)
+    lapply(PL,get_and_save_a_market, data_folder)
+    
+    print(Sys.time())
+    Sys.sleep(time = 300)
+}
+
+###############################
+
+# my_bf$events(filter = marketFilter(competitionIds = 10932509)) %>% View() # 30072809	
+
+
+while (Sys.time() < "2020-11-02 21:50:00 BST"){
+    
+    LEELEI <- 
+        my_bf$marketCatalogue(maxResults = 100, filter = marketFilter(eventIds = 30072809))
+    
+    PL <- 
+        my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = 2022802))
+    
+    
+    lapply(LEELEI,get_and_save_a_market, data_folder)
+    lapply(PL,get_and_save_a_market, data_folder)
+    
+    print(Sys.time())
+    Sys.sleep(time = 300)
+}
+
+###############################
+
 Sys.sleep(time = 200)
