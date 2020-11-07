@@ -10,8 +10,15 @@ event_ids <- my_bf$events(filter = marketFilter(eventTypeIds = 2378961)) %>%
 
 
 
-US_politics <- 
-    my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = event_ids))
-lapply(US_politics,get_and_save_a_market, data_folder_us_election)
+
+while (Sys.time() < "2020-11-07 22:50:00 BST"){
+    US_politics <- 
+        my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = event_ids))
+    lapply(US_politics,get_and_save_a_market, data_folder_us_election)
+    
+    print(Sys.time())
+    Sys.sleep(1080)
+}
 
 
+Sys.sleep(200)
