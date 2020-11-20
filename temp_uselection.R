@@ -11,7 +11,7 @@ event_ids <- my_bf$events(filter = marketFilter(eventTypeIds = 2378961)) %>%
 
 
 
-while (Sys.time() < "2020-11-07 22:50:00 BST"){
+while (Sys.time() < "2020-11-09 12:50:00 BST"){
     US_politics <- 
         my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = event_ids))
     lapply(US_politics,get_and_save_a_market, data_folder_us_election)
