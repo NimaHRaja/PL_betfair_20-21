@@ -115,4 +115,52 @@ while (Sys.time() < "2020-12-16 21:55:00 BST"){
 
 ###############################################################
 
+while (Sys.time() < "2020-12-17 17:40:00 BST"){Sys.sleep(600)}
+
+###############################################################
+
+# my_bf$events(filter = marketFilter(competitionIds = 10932509)) %>% View() # 30168968	
+
+
+while (Sys.time() < "2020-12-17 19:55:00 BST"){
+    
+    AVLBUR <- 
+        my_bf$marketCatalogue(maxResults = 100, filter = marketFilter(eventIds = 30168968))
+    
+    PL <- 
+        my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = 2022802))
+    
+    
+    lapply(AVLBUR,get_and_save_a_market, data_folder)
+    lapply(PL,get_and_save_a_market, data_folder)
+    
+    print(Sys.time())
+    Sys.sleep(time = 100)
+}
+
+
+###############################################################
+
+# my_bf$events(filter = marketFilter(competitionIds = 10932509)) %>% View() # 30168974	
+
+
+while (Sys.time() < "2020-12-17 21:55:00 BST"){
+    
+    SHUMUN <- 
+        my_bf$marketCatalogue(maxResults = 100, filter = marketFilter(eventIds = 30168974))
+    
+    PL <- 
+        my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = 2022802))
+    
+    
+    lapply(SHUMUN,get_and_save_a_market, data_folder)
+    lapply(PL,get_and_save_a_market, data_folder)
+    
+    print(Sys.time())
+    Sys.sleep(time = 100)
+}
+
+
+###############################################################
+
 Sys.sleep(100)
