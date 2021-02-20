@@ -4,6 +4,8 @@
 options(stringsAsFactors = FALSE)
 library(betfaiR)
 library(dplyr)
+library(filesstrings)
+library(lubridate)
 
 #### Creating connection to BF API ####
 
@@ -18,6 +20,7 @@ data_folder <- read.csv("data_folder.csv") %>% filter(Event == "PL20-21") %>%
     select(folder) %>% as.vector() %>% as.character()
 
 source("get_and_save_a_market.R")
+source("get_list_of_marketdata_files.R")
 
 # PL <- my_bf$marketCatalogue(maxResults = 1000, filter = marketFilter(eventIds = 2022802))
 
